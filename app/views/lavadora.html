@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavadora</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/fontawesome.min.css">
+    <style>
+        hr,h1,h2,h3,h4,h5,h6 {
+            margin: 0;
+        }
+        .led {
+            width: 20px !important;
+            height: 20px !important;
+            display: inline-block !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="mb-3">Lavadora</h1>
+        <div class="card shadow text-center p-5">
+            <div class="card-body">
+                <div class="row align-items-end g-4" template="washingMachine">
+                    <div class="col-2">
+                        <div class="row g-4">
+                            <div>
+                                <span class="rounded-pill border border-3 shadow-sm led ${on}"></span>
+                            </div>
+                            <div>
+                                <button onclick="toggle('on')" class="btn btn-primary">Encender</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row g-4">
+                            <div class="align-items-center">
+                                5 <span class="rounded-pill border border-3 shadow-sm led ${waterLevel5}"></span>
+                            </div>
+                            <div>
+                                4 <span class="rounded-pill border border-3 shadow-sm led ${waterLevel4}"></span>
+                            </div>
+                            <div>
+                                3 <span class="rounded-pill border border-3 shadow-sm led ${waterLevel3}"></span>
+                            </div>
+                            <div>
+                                2 <span class="rounded-pill border border-3 shadow-sm led ${waterLevel2}"></span>
+                            </div>
+                            <div>
+                                1 <span class="rounded-pill border border-3 shadow-sm led ${waterLevel1}"></span>
+                            </div>
+                            <div>
+                                <button onclick="toggle('waterLevel')" class="btn btn-primary">Nivel de agua</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row g-4">
+                            <div>
+                                Pesado <span
+                                    class="rounded-pill border border-3 shadow-sm led ${washingLevelHeavy}"></span>
+                            </div>
+                            <div>
+                                Medio <span
+                                    class="rounded-pill border border-3 shadow-sm led ${washingLevelMedium}"></span>
+                            </div>
+                            <div>
+                                Normal <span
+                                    class="rounded-pill border border-3 shadow-sm led ${washingLevelNormal}"></span>
+                            </div>
+                            <div>
+                                <button onclick="toggle('washingLevel')" class="btn btn-primary">Nivel de
+                                    lavado</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row g-4">
+                            <div>
+                                30 <span class="rounded-pill border border-3 shadow-sm led ${washingTime30}"></span>
+                            </div>
+                            <div>
+                                25 <span class="rounded-pill border border-3 shadow-sm led ${washingTime25}"></span>
+                            </div>
+                            <div>
+                                20 <span class="rounded-pill border border-3 shadow-sm led ${washingTime20}"></span>
+                            </div>
+                            <div>
+                                15 <span class="rounded-pill border border-3 shadow-sm led ${washingTime15}"></span>
+                            </div>
+                            <div>
+                                10 <span class="rounded-pill border border-3 shadow-sm led ${washingTime10}"></span>
+                            </div>
+                            <div>
+                                <button onclick="toggle('washingTime')" class="btn btn-primary">Tiempo de
+                                    lavado</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row g-4">
+                            <div>
+                                3 <span class="rounded-pill border border-3 shadow-sm led ${rinse3}"></span>
+                            </div>
+                            <div>
+                                2 <span class="rounded-pill border border-3 shadow-sm led ${rinse2}"></span>
+                            </div>
+                            <div>
+                                1 <span class="rounded-pill border border-3 shadow-sm led ${rinse1}"></span>
+                            </div>
+                            <div>
+                                <button onclick="toggle('rinse')" class="btn btn-primary">Enjuague</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="row g-4">
+                            <div>
+                                <span class="rounded-pill border border-3 shadow-sm led ${washing}"></span>
+                            </div>
+                            <div>
+                                <button onclick="toggle('washing')" class="btn btn-primary">Lavar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/sweetalert2.all.min.js"></script>
+    <script src="../../assets/js/renderer.min.js"></script>
+    <script src="../controllers/washing_machine_controller.js"></script>
+</body>
+
+</html>
